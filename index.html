@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>React Simple Typewriter</title>
+      <link href="./css/main.css" rel="stylesheet" />
+   </head>
+   <body>
+      <h1 id="react-simple-typewriter" style="text-align: center;">React Simple Typewriter</h1>
+      <div style="width: 100%; height: 100%;">
+         <img src="./img/screenshot.gif" alt="screenshot" style="width: 100%; height: 100%; object-fit: cover;"/>
+      </div>
+      <h2 id="install">Install</h2>
+      <h4 id="npm">npm</h4>
+      <pre style="width: 100%; height: 100%; overflow-x: scroll;"><code class="language-sh">npm i react-simple-typewriter
+</code></pre>
+      <h4 id="yarn">Yarn</h4>
+      <pre style="width: 100%; height: 100%; overflow-x: scroll;"><code class="language-sh">yarn add react-simple-typewriter
+</code></pre>
+      <hr>
+      <h2 id="usage">Usage</h2>
+      <p>There are two ways to <span>Typewriter</span>:</p>
+      <h2 id="1-component">1. Component</h2>
+      <pre style="width: 100%; height: 100%; overflow-x: scroll;"><code class="language-jsx">import React from &#39;react&#39;
+import { Typewriter } from &#39;react-simple-typewriter&#39;
+
+const MyComponent = () =&gt; {
+  return (
+    &lt;div className=&#39;App&#39;&gt;
+      &lt;Typewriter {/* Props */} /&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+      <h3 id="component-props">Component Props</h3>
+      <div style="width: 100%; height: 100%; overflow-x: scroll;">
+        <table>
+            <thead>
+               <tr>
+                  <th>Prop</th>
+                  <th align="center">Type</th>
+                  <th>Options</th>
+                  <th>Description</th>
+                  <th align="center">Default</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><span>words</span></td>
+                  <td align="center">array</td>
+                  <td>Required</td>
+                  <td>Array of strings holding the words</td>
+                  <td align="center"><span>[&#39;Hello&#39;, &#39;...&#39;]</span></td>
+               </tr>
+               <tr>
+                  <td><span>typeSpeed</span></td>
+                  <td align="center">number</td>
+                  <td>Optional</td>
+                  <td>Character typing speed in Milliseconds</td>
+                  <td align="center"><span>80</span></td>
+               </tr>
+               <tr>
+                  <td><span>deleteSpeed</span></td>
+                  <td align="center">number</td>
+                  <td>Optional</td>
+                  <td>Character deleting speed in Milliseconds</td>
+                  <td align="center"><span>50</span></td>
+               </tr>
+               <tr>
+                  <td><span>delaySpeed</span></td>
+                  <td align="center">number</td>
+                  <td>Optional</td>
+                  <td>Delay time between the words in Milliseconds</td>
+                  <td align="center"><span>1500</span></td>
+               </tr>
+               <tr>
+                  <td><span>loop</span></td>
+                  <td align="center">number | boolean</td>
+                  <td>Optional</td>
+                  <td>Control how many times to run. <span>0 | false</span> to run infinitely</td>
+                  <td align="center"><span>1</span></td>
+               </tr>
+               <tr>
+                  <td><span>cursor</span></td>
+                  <td align="center">boolean</td>
+                  <td>Optional</td>
+                  <td>Show / Hide a cursor</td>
+                  <td align="center"><span>false</span></td>
+               </tr>
+               <tr>
+                  <td><span>cursorStyle</span></td>
+                  <td align="center">ReactNode</td>
+                  <td>Optional</td>
+                  <td>Change the cursor style available if <span>cursor</span> is <span>enabled</span></td>
+                  <td align="center"><span>|</span></td>
+               </tr>
+               <tr>
+                  <td><span>cursorBlinking</span></td>
+                  <td align="center">boolean</td>
+                  <td>Optional</td>
+                  <td>Enable cursor blinking animation</td>
+                  <td align="center"><span>true</span></td>
+               </tr>
+               <tr>
+                  <td><span>onLoopDone</span></td>
+                  <td align="center">function</td>
+                  <td>Optional</td>
+                  <td>Callback function that is triggered when loops are completed. available if <span>loop</span> is <span>&gt; 0</span></td>
+                  <td align="center"><span>-</span></td>
+               </tr>
+               <tr>
+                  <td><span>onType</span></td>
+                  <td align="center">function</td>
+                  <td>Optional</td>
+                  <td>Callback function that is triggered while typing with typed words <span>count</span> passed</td>
+                  <td align="center"><span>-</span></td>
+               </tr>
+               <tr>
+                  <td><span>onDelay</span></td>
+                  <td align="center">function</td>
+                  <td>Optional</td>
+                  <td>Callback function that is triggered on typing delay</td>
+                  <td align="center"><span>-</span></td>
+               </tr>
+               <tr>
+                  <td><span>onDelete</span></td>
+                  <td align="center">function</td>
+                  <td>Optional</td>
+                  <td>Callback function that is triggered while deleting</td>
+                  <td align="center"><span>-</span></td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <hr>
+      <h3 id="usage-example">Usage Example</h3>
+      <div style="width: 100%; height: 100%; overflow-x: scroll;">
+        
+      </div>
+      <pre style="width: 100%; height: 100%; overflow-x: scroll;"><code class="language-jsx">import React from &#39;react&#39;
+import { Typewriter } from &#39;react-simple-typewriter&#39;
+
+const MyComponent = () =&gt; {
+
+  const handleType = (count: number) =&gt; {
+    // access word count number
+    console.log(count)}
+  }
+
+  const handleDone = () =&gt; {
+    console.log(`Done after 5 loops!`)
+  }
+
+  return (
+    &lt;div className=&#39;App&#39;&gt;
+      &lt;h1 style={{ paddingTop: &#39;5rem&#39;, margin: &#39;auto 0&#39;, fontWeight: &#39;normal&#39; }}&gt;
+        Life is simple{&#39; &#39;}
+        &lt;span style={{ color: &#39;red&#39;, fontWeight: &#39;bold&#39; }}&gt;
+          {/* Style will be inherited from the parent element */}
+          &lt;Typewriter
+            words={[&#39;Eat&#39;, &#39;Sleep&#39;, &#39;Code&#39;, &#39;Repeat!&#39;]}
+            loop={5}
+            cursor
+            cursorStyle=&#39;_&#39;
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            onLoopDone={handleDone}
+            onType={handleType}
+          /&gt;
+        &lt;/span&gt;
+      &lt;/h1&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+      <h2 id="2-hook">2. Hook</h2>
+      <p><strong>BREAKING CHANGES v5.0.0</strong> Hook now returns <code>text</code> along with some useful <code>flags</code>:</p>
+      <div style="width: 100%; height: 100%; overflow-x: scroll;">
+        <table>
+            <thead>
+               <tr>
+                  <th>Prop</th>
+                  <th align="center">Type</th>
+                  <th>Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><code>isType</code></td>
+                  <td align="center">boolean</td>
+                  <td>Check if currently typing</td>
+               </tr>
+               <tr>
+                  <td><code>isDelete</code></td>
+                  <td align="center">boolean</td>
+                  <td>Check if currently deleting</td>
+               </tr>
+               <tr>
+                  <td><code>isDelay</code></td>
+                  <td align="center">boolean</td>
+                  <td>Check if currently on delay</td>
+               </tr>
+               <tr>
+                  <td><code>isDone</code></td>
+                  <td align="center">boolean</td>
+                  <td>Check if all running loops are done</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <br>
+      <pre style="width: 100%; height: 100%; overflow-x: scroll;"><code class="language-jsx">import { useTypewriter } from &#39;react-simple-typewriter&#39;
+
+const MyComponent = () =&gt; {
+  /**
+   * @returns
+   * text: [string] typed text
+   * NEW helper: {} helper flags
+   */
+  const [text, helper] = useTypewriter({
+    /* Config */
+  })
+
+  /* Hook helper */
+  const { isType, isDelete, isDelay, isDone } = helper
+
+  return (
+    &lt;div className=&#39;App&#39;&gt;
+      &lt;span&gt;{text}&lt;/span&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+      <h3 id="hook-config">Hook Config</h3>
+      <div style="width: 100%; height: 100%; overflow-x: scroll;">
+        <table>
+            <thead>
+               <tr>
+                  <th>Prop</th>
+                  <th align="center">Type</th>
+                  <th>Options</th>
+                  <th>Description</th>
+                  <th align="center">Default</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><code>words</code></td>
+                  <td align="center">array</td>
+                  <td>Required</td>
+                  <td>Array of strings holding the words</td>
+                  <td align="center"><code>[&#39;Hello&#39;, &#39;...&#39;]</code></td>
+               </tr>
+               <tr>
+                  <td><code>typeSpeed</code></td>
+                  <td align="center">number</td>
+                  <td>Optional</td>
+                  <td>Character typing speed in Milliseconds</td>
+                  <td align="center"><code>80</code></td>
+               </tr>
+               <tr>
+                  <td><code>deleteSpeed</code></td>
+                  <td align="center">number</td>
+                  <td>Optional</td>
+                  <td>Character deleting speed in Milliseconds</td>
+                  <td align="center"><code>50</code></td>
+               </tr>
+               <tr>
+                  <td><code>delaySpeed</code></td>
+                  <td align="center">number</td>
+                  <td>Optional</td>
+                  <td>Delay time between the words in Milliseconds</td>
+                  <td align="center"><code>1500</code></td>
+               </tr>
+               <tr>
+                  <td><code>loop</code></td>
+                  <td align="center">number | boolean</td>
+                  <td>Optional</td>
+                  <td>Control how many times to run. <code>0 | false</code> to run infinitely</td>
+                  <td align="center"><code>1</code></td>
+               </tr>
+               <tr>
+                  <td><code>onLoopDone</code></td>
+                  <td align="center">function</td>
+                  <td>Optional</td>
+                  <td>Callback function that is triggered when loops are completed. available if <code>loop</code> is <code>&gt; 0</code></td>
+                  <td align="center"><code>-</code></td>
+               </tr>
+               <tr>
+                  <td><code>onType</code></td>
+                  <td align="center">function</td>
+                  <td>Optional</td>
+                  <td>Callback function that is triggered while typing</td>
+                  <td align="center"><code>-</code></td>
+               </tr>
+               <tr>
+                  <td><code>onDelete</code></td>
+                  <td align="center">function</td>
+                  <td>Optional</td>
+                  <td>Callback function that is triggered while deleting</td>
+                  <td align="center"><code>-</code></td>
+               </tr>
+               <tr>
+                  <td><code>onDelay</code></td>
+                  <td align="center">function</td>
+                  <td>Optional</td>
+                  <td>Callback function that is triggered on typing delay</td>
+                  <td align="center"><code>-</code></td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <h3 id="hook-usage-example">Hook Usage Example</h3>
+      <pre style="width: 100%; height: 100%; overflow-x: scroll;"><code class="language-jsx">import React from &#39;react&#39;
+import { useTypewriter } from &#39;react-simple-typewriter&#39;
+
+const MyComponent = () =&gt; {
+  const [text] = useTypewriter({
+    words: [&#39;Hello&#39;, &#39;From&#39;, &#39;Typewriter&#39;, &#39;Hook!&#39;],
+    loop: 0
+  })
+
+  return (
+    &lt;div className=&#39;App&#39;&gt;
+      &lt;span&gt;{text}&lt;/span&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+      <h3 id="hook-with-cursor">Hook with Cursor</h3>
+      <p>If you like to have the <strong>Cursor</strong> effect, you can <code>import</code> it as a separate <code>Component</code></p>
+      <pre style="width: 100%; height: 100%; overflow-x: scroll;"><code class="language-jsx">import React from &#39;react&#39;
+import { useTypewriter, Cursor } from &#39;react-simple-typewriter&#39;
+
+const MyComponent = () =&gt; {
+  const [text] = useTypewriter({
+    words: [&#39;Hello&#39;, &#39;From&#39;, &#39;Typewriter&#39;, &#39;Hook!&#39;],
+    loop: 3,
+    onLoopDone: () =&gt; console.log(`loop completed after 3 runs.`)
+  })
+
+  return (
+    &lt;div className=&#39;App&#39;&gt;
+      &lt;span&gt;{text}&lt;/span&gt;
+      &lt;Cursor cursorColor=&#39;red&#39; /&gt;
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+      <h3 id="cursor-component-props">Cursor Component Props</h3>
+      <div style="width: 100%; height: 100%; overflow-x: scroll;">
+        <table>
+            <thead>
+               <tr>
+                  <th>Prop</th>
+                  <th align="center">Type</th>
+                  <th>Options</th>
+                  <th>Description</th>
+                  <th align="center">Default</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><code>cursorStyle</code></td>
+                  <td align="center">ReactNode</td>
+                  <td>Optional</td>
+                  <td>Change cursor style</td>
+                  <td align="center"><code>|</code></td>
+               </tr>
+               <tr>
+                  <td><code>cursorColor</code></td>
+                  <td align="center">String</td>
+                  <td>Optional</td>
+                  <td>Change cursor color</td>
+                  <td align="center"><code>inherit</code></td>
+               </tr>
+               <tr>
+                  <td><code>cursorBlinking</code></td>
+                  <td align="center">Boolean</td>
+                  <td>Optional</td>
+                  <td>disable cursor blinking animation</td>
+                  <td align="center"><code>true</code></td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </body>
+</html>

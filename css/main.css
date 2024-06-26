@@ -1,0 +1,19 @@
+pre{
+    width: auto;
+    background-color: #f6f8fa;
+    color: #1f2328;
+    display: flex;
+    justify-content: space-between;
+    line-height: 24px;
+    margin: 0px 0px 16px;
+}
+span{
+    background-color: #f6f8fa;
+    padding: 5px;
+    border-radius: 5px;
+}
+td{
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
